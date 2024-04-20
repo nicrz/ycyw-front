@@ -1,4 +1,4 @@
-# MDD Front
+# YCYW Front
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
@@ -6,11 +6,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Git clone:
 
-> git clone https://github.com/nicrz/mdd-front
+> git clone https://github.com/nicrz/ycyw-front
 
 Go inside folder:
 
-> cd mdd-front
+> cd ycyw-front
 
 Install dependencies:
 
