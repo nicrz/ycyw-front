@@ -1,0 +1,17 @@
+<div class="app">
+  <mat-toolbar color="white" fxLayout="row" fxLayoutAlign="space-between center">
+    <img src="../assets/img/logo-mini.png">
+    <div *ngIf="$isLogged() | async; else notLogged">
+      <span (click)="logout()" class="link">Se déconnecter</span>
+      <span routerLink="me" class="link"><img src="../assets/img/my-account.png" height="30px" width="30px"></span>
+    </div>
+    <ng-template #notLogged>
+      <div>
+        <span routerLink="login" class="link">Se connecter</span>
+      </div>
+    </ng-template>
+  </mat-toolbar>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

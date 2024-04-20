@@ -1,0 +1,54 @@
+<div class="m3">
+    <mat-card *ngIf="chat">
+      <mat-card-title>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <button mat-icon-button (click)="back()">
+              <mat-icon>arrow_back</mat-icon>
+            </button>
+            <h1>Chat avec le support</h1>
+          </div>
+
+        </div>
+      </mat-card-title>
+
+
+    </mat-card>
+
+    <!-- Messages-->
+
+    <div class="create m3">
+    <mat-card>
+      <mat-card-title>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <h3>Discussion</h3>
+        </div>
+      </mat-card-title>
+
+  <div class="comment" *ngFor="let message of messages">
+    <div class="comment-header">
+      <div class="comment-author" *ngIf="message">{{ message.senderName }}</div>
+    </div>
+    <div class="comment-content" *ngIf="message">{{ message.content }}</div>
+  </div>
+
+      <mat-card-content *ngIf="messageForm">
+        <form class="mt2" fxLayout="column" [formGroup]="messageForm" (ngSubmit)="submit()">
+          <input type="hidden" formControlName="chat">
+
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Message</mat-label>
+            <textarea matInput rows="4" formControlName="content"></textarea>
+          </mat-form-field>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <button mat-raised-button color="primary" type="submit" [disabled]="messageForm.invalid">
+              Publier
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+    <!-- Fin messages -->
+  </div>

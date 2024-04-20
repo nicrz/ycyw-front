@@ -1,0 +1,26 @@
+<div class="create m3">
+    <mat-card>
+      <mat-card-title>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <button mat-icon-button routerLink="/">
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+          <h1>Nouveau ticket</h1>
+        </div>
+      </mat-card-title>
+      <mat-card-content *ngIf="chatForm">
+        <form class="mt2" fxLayout="column" [formGroup]="chatForm" (ngSubmit)="submit()">
+          <mat-form-field appearance="outline" class="" fxFlex>
+            <mat-label>Sujet</mat-label>
+            <input matInput formControlName="subject">
+          </mat-form-field>
+
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <button mat-raised-button color="primary" type="submit" [disabled]="chatForm.invalid">
+              Créer
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
